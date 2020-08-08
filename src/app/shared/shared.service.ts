@@ -9,13 +9,15 @@ export class SharedService {
 
   getSpaceXData(launchSucces?, landSuccess?, year?) {
     let params = new HttpParams();
-    if (year!=null && year!=undefined) params = params.append('launch_year', year);
-    if (landSuccess!=null && landSuccess!=undefined) params = params.append('land_success', landSuccess);
-    if (launchSucces!=null && launchSucces!=undefined) params = params.append('launch_succes', launchSucces);
+    if (year != null && year != undefined)
+      params = params.append('launch_year', year);
+    if (landSuccess != null && landSuccess != undefined)
+      params = params.append('land_success', landSuccess);
+    if (launchSucces != null && launchSucces != undefined)
+      params = params.append('launch_succes', launchSucces);
 
     return this.http.get('https://api.spacexdata.com/v3/launches?limit=100', {
       params: params,
     });
-
   }
 }

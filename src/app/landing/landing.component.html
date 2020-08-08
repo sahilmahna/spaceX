@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-2 col-sm-4"> 
-            <div class="card">
+            <div class="card mb-2">
                 <label class="card-img-top ml-1">Filters</label>
                 <div class="card-body">
                   <label >Launch Year</label>
@@ -44,16 +44,16 @@
                             <img class="card-img-top" src="{{spacex.links.mission_patch_small}}" alt="Card image cap">
                         </div>
                         <div class="card-body">
-                           <div class="col-12 card-content-head">{{spacex.mission_name}} #{{spacex.flight_number}}</div>
-                           <div class="col-12 card-content-labels">Mission Ids: 
+                           <div class="col-12 card-content-head" tabindex="1">{{spacex.mission_name}} #{{spacex.flight_number}}</div>
+                           <div class="col-12 card-content-labels" tabindex="1" >Mission Ids: 
                             <ul>
-                                <li class="card-content-values" *ngFor="let ids of spacex.mission_id">{{ids}}</li>
+                                <li class="card-content-values" tabindex="1" *ngFor="let ids of spacex.mission_id">{{ids}}</li>
                                 
                               </ul>
 
                            </div>
-                           <div class="col-12 card-content-labels">Successful Launch: <span class="card-content-values">{{spacex.launch_success}}</span></div>
-                           <div class="col-12 card-content-labels">Successful Landing: <span class="card-content-values">{{spacex.launch_landing}}</span></div>
+                           <div class="col-12 card-content-labels" tabindex="1">Successful Launch: <span class="card-content-values">{{spacex.launch_success}}</span></div>
+                           <div class="col-12 card-content-labels" tabindex="1">Successful Landing: <span class="card-content-values">{{spacex.launch_landing}}</span></div>
 
                         </div>
                       </div>

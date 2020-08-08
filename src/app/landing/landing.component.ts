@@ -9,13 +9,10 @@ import { NgxSpinnerService } from 'ngx-spinner';
   styleUrls: ['./landing.component.css'],
 })
 export class LandingComponent implements OnInit {
-  constructor(
-    private sharedService: SharedService,
-    private spinner: NgxSpinnerService
-  ) {}
-  selectedYear;
-  landing;
-  launch;
+  selectedYear: number;
+  landing: boolean;
+  launch: boolean;
+  spaceXArray: SpaceX[] = [];
   yearsArray = [
     2006,
     2007,
@@ -33,10 +30,16 @@ export class LandingComponent implements OnInit {
     2019,
     2020,
   ];
+
+  constructor(
+    private sharedService: SharedService,
+    private spinner: NgxSpinnerService
+  ) {}
+
   ngOnInit(): void {
     this.getspaceXData();
   }
-  spaceXArray: SpaceX[] = [];
+
   getspaceXData() {
     this.spinner.show();
     this.sharedService
@@ -46,7 +49,7 @@ export class LandingComponent implements OnInit {
           this.spaceXArray = res;
           this.spinner.hide();
         },
-        (err) => {
+        () => {
           this.spinner.hide();
         }
       );
