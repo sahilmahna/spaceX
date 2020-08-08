@@ -1,0 +1,65 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-2 col-sm-4"> 
+            <div class="card">
+                <label class="card-img-top ml-1">Filters</label>
+                <div class="card-body">
+                  <label >Launch Year</label>
+                  <hr>
+                  <div class="row mb-3">
+                  <div *ngFor="let year of yearsArray" [ngClass]="{'activeYear': selectedYear == year}" (click)="selectedYear==year?selectedYear=null:selectedYear=year;getspaceXData();" class="col-5 m-1 filter-buttons">
+                      {{year}}
+                     </div>
+                  
+            </div>
+
+            <label >Successful Launch</label>
+            <hr>
+            <div class="row mb-3">
+              <div class="col-5 m-1 filter-buttons" [ngClass]="{'activeYear': launch == true}" (click)="launch==true?launch=null:launch=true;getspaceXData();" >
+                  True
+              </div>
+              <div class="col-5 m-1 filter-buttons" [ngClass]="{'activeYear': launch == false}" (click)="launch==false?launch=null:launch=false;getspaceXData();" >
+                False
+            </div>
+        </div>
+        <label >Successful Landing</label>
+        <hr>
+        <div class="row">
+          <div class="col-5 m-1 filter-buttons" [ngClass]="{'activeYear': landing == true}" (click)="landing==true?landing=null:landing=true;getspaceXData();" >
+              True
+          </div>
+          <div class="col-5 m-1 filter-buttons" [ngClass]="{'activeYear': landing == false}" (click)="landing==false?landing=null:landing=false;getspaceXData();" >
+            False
+        </div>
+    </div>
+                </div>
+              </div>
+        </div>
+        <div class="col-lg-10 col-sm-8">
+            <div class="row">
+                <div *ngFor="let spacex of spaceXArray" class="col-lg-3 col-sm-6 mb-4">
+                    <div class="card">
+                        <div class="img-div">
+                            <img class="card-img-top" src="{{spacex.links.mission_patch_small}}" alt="Card image cap">
+                        </div>
+                        <div class="card-body">
+                           <div class="col-12 card-content-head">{{spacex.mission_name}} #{{spacex.flight_number}}</div>
+                           <div class="col-12 card-content-labels">Mission Ids: 
+                            <ul>
+                                <li class="card-content-values" *ngFor="let ids of spacex.mission_id">{{ids}}</li>
+                                
+                              </ul>
+
+                           </div>
+                           <div class="col-12 card-content-labels">Successful Launch: <span class="card-content-values">{{spacex.launch_success}}</span></div>
+                           <div class="col-12 card-content-labels">Successful Landing: <span class="card-content-values">{{spacex.launch_landing}}</span></div>
+
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>

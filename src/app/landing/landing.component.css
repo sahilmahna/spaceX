@@ -1,0 +1,62 @@
+.filter-buttons
+{
+    cursor: pointer;
+    background-color: #00800075;
+    border-radius: 7px;
+}
+
+.activeYear
+{
+    background-color: green !important;
+}
+.card-img-top
+{
+    font-size: 16px;
+    font-weight: 500;
+}
+.card-body
+{
+    padding-top: 0px;
+    text-align: left;
+}
+.card-body hr
+{
+    margin: 0px!important;
+    margin-bottom: 0.2rem!important;
+    border-top: 1px solid rgb(0 0 0 / 36%);
+}
+
+.card{  
+    box-shadow: 0 3px 6px #00000029;
+    width: 100%;
+}
+.card-content-head  
+{
+    color: #4444c2db;
+    font-weight: 700;
+    min-height: 3rem;
+    font-size: 15px;
+}
+
+.card-content-labels
+{
+    font-size: 14px;
+    font-weight: bold;
+}
+.card-content-values
+{
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.card-content-labels ul
+{
+    min-height: 2rem;
+}
+
+.img-div
+{
+    background-color: #cccccc;
+    margin: 1.5rem;
+    margin-bottom: 0rem;
+}

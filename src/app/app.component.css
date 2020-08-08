@@ -1,0 +1,17 @@
+.header
+{
+    font-weight: 700;
+    font-size: 24px;
+}
+.footer
+{
+    position: fixed;
+    bottom: 0px;
+    background-color: #cccccc;
+    text-align: center;
+}
+
+.footer span
+{
+    font-weight: bold;
+}
